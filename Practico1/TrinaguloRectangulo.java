@@ -1,3 +1,4 @@
+package Practico1;
 public class TrinaguloRectangulo {
     public static void main(String[] args) {
         double hipotenusa = Double.parseDouble(args[0]);

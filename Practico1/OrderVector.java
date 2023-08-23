@@ -1,3 +1,4 @@
+package Practico1;
 import java.util.Scanner;
 
 public class OrderVector {

@@ -1,3 +1,4 @@
+package Practico1;
 import java.util.Scanner;
 
 public class CircunferenciaScanner {
@@ -8,6 +9,7 @@ public class CircunferenciaScanner {
         System.out.println("Ingrese el valor del radio: ");
         double radio = teclado.nextDouble();
         double perimetro = calcularPerimetro(radio);
+        teclado.close();
 
         System.out.println("El perimetro de la circunferencia es: " + perimetro);
     }

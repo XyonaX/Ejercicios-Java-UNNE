@@ -1,3 +1,4 @@
+package Practico1;
 public class Triangulo {
     public static void main(String[] args) {
         double a = Double.parseDouble(args[0]);

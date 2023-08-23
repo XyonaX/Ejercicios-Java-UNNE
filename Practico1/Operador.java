@@ -1,3 +1,4 @@
+package Practico1;
 public class Operador {
     public static void main(String[] args) {
         int a = 8;

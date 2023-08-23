@@ -1,3 +1,4 @@
+package Practico1;
 public class Multiplo {
     
 

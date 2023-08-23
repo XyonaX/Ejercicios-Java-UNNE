@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Laboratorio
+comment1.params=p_nombre\ p_domicilio\ p_telefono\ p_compraMin\ p_diaEnt
+comment1.target=Laboratorio(java.lang.String,\ java.lang.String,\ java.lang.String,\ int,\ int)
+comment2.params=p_nombre\ p_domicilio\ p_telefono
+comment2.target=Laboratorio(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment3.params=p_compraMin
+comment3.target=void\ nuevaCompraMinima(int)
+comment4.params=p_diaEnt
+comment4.target=void\ nuevoDiaEntrega(int)
+comment5.params=
+comment5.target=java.lang.String\ mostrar()
+numComments=6

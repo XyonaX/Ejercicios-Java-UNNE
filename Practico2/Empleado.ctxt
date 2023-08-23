@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Empleado
+comment1.params=p_cuil\ p_apellido\ p_nombre\ p_importe\ p_anio
+comment1.target=Empleado(long,\ java.lang.String,\ java.lang.String,\ double,\ int)
+comment2.params=
+comment2.target=int\ antiguedad()
+comment3.params=
+comment3.target=double\ descuento()
+comment4.params=
+comment4.target=double\ adicional()
+comment5.params=
+comment5.target=double\ sueldoNeto()
+comment6.params=
+comment6.target=java.lang.String\ nomYApe()
+comment7.params=
+comment7.target=void\ mostrar()
+comment8.params=
+comment8.target=java.lang.String\ mostrarLinea()
+numComments=9
