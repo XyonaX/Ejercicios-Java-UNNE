@@ -52,6 +52,7 @@ public class Empleado
     }
 
     public String mostrarLinea(){
-        return String.format("%11d %-30s $%,.2f", this.cuil, this.nomYApe(), this.sueldoNeto());
+        String resultado = String.format("%11d %-30s $%,.2f", this.cuil, this.nomYApe(), this.sueldoNeto());
+        return resultado;
     }
 }
