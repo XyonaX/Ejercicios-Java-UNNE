@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=CrearFigura
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=void\ mostrarMenu()
+comment3.params=rectangulo\ teclado
+comment3.target=void\ desplazar(Rectangulo,\ java.util.Scanner)
+comment4.params=rectangulo1\ rectangulo2
+comment4.target=void\ mostrarMayor(Rectangulo,\ Rectangulo)
+numComments=5

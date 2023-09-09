@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=GestionStock
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=
+comment2.target=void\ mostrarMenu()
+comment3.params=teclado\ lab
+comment3.target=Productos\ crearNuevoProducto(java.util.Scanner,\ Laboratorio)
+comment4.params=teclado\ producto
+comment4.target=void\ ajusteStock(java.util.Scanner,\ Productos)
+comment5.params=teclado\ producto
+comment5.target=void\ ajustarPtoRepo(java.util.Scanner,\ Productos)
+comment6.params=teclado\ producto
+comment6.target=void\ ajustarExistMinima(java.util.Scanner,\ Productos)
+comment7.params=
+comment7.target=void\ pausarPrograma()
+numComments=8

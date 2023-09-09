@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Escuela
+comment1.params=p_nombre\ p_domicilio\ p_director
+comment1.target=Escuela(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=p_nombre
+comment2.target=void\ setNombre(java.lang.String)
+comment3.params=p_domicilio
+comment3.target=void\ setDomicilio(java.lang.String)
+comment4.params=p_director
+comment4.target=void\ setDirector(java.lang.String)
+comment5.params=
+comment5.target=java.lang.String\ getNombre()
+comment6.params=
+comment6.target=java.lang.String\ getDomicilio()
+comment7.params=
+comment7.target=java.lang.String\ getDirector()
+comment8.params=p_docente
+comment8.target=void\ imprimirRecibo(Docente)
+numComments=9

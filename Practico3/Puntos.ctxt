@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Puntos
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=contador\ puntos\ teclado
+comment2.target=void\ crearPunto(int,\ Punto[],\ java.util.Scanner)
+comment3.params=contador\ puntos
+comment3.target=void\ calcularDistancia(int,\ Punto[])
+comment4.params=scanner
+comment4.target=Punto\ crearPunto(java.util.Scanner)
+numComments=5

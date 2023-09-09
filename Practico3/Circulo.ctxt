@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Circulo
+comment1.params=p_radio\ p_centro
+comment1.target=Circulo(double,\ Punto)
+comment10.params=
+comment10.target=void\ caracteristicas()
+comment11.params=otroCirculo
+comment11.target=double\ distanciaA(Circulo)
+comment12.params=otroCirculo
+comment12.target=Circulo\ elMayor(Circulo)
+comment2.params=
+comment2.target=Circulo()
+comment3.params=p_centro
+comment3.target=void\ setCentro(Punto)
+comment4.params=p_radio
+comment4.target=void\ setRadio(double)
+comment5.params=
+comment5.target=Punto\ getCentro()
+comment6.params=
+comment6.target=double\ getRadio()
+comment7.params=p_dx\ p_dy
+comment7.target=void\ desplazar(double,\ double)
+comment8.params=
+comment8.target=double\ superficie()
+comment9.params=
+comment9.target=double\ perimetro()
+numComments=13
