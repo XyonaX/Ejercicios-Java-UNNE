@@ -1,7 +1,13 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 public class Banco {
     
     public static void main(String[] args) {
-        Persona juan = new Persona(41442040, "Juan", "Perez", 1998);
+        //utilizamos el nuevo argumento del calendario para el constructor de persona
+        Calendar fechaNacimiento = new GregorianCalendar(1998,7,8);
+
+        Persona juan = new Persona(41442040, "Juan", "Perez", fechaNacimiento);
         
         //Ejemplo con cuenta Bancaria
         // CuentaBancaria cuenta = new CuentaBancaria(1, juan, 0);
@@ -31,5 +37,14 @@ public class Banco {
         // caja.mostrar();
         // //Volvemos a realizar la comprovacion de que no te deja sacar mas saldo del que tiene la cuenta
         // caja.extraer(15000);
+    
+        //Probamos el nuevo metodo esCumpleaños
+
+        if(juan.esCumpleanios()){
+            System.out.println("Feliz Cumple");
+        }else{
+            System.out.println("No es su cumple");
+        }
     }
+
 }
