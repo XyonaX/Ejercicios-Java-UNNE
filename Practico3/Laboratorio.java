@@ -1,30 +1,26 @@
+public class Laboratorio {
+    private String nombre;       
+    private String domicilio;    
+    private String telefono;     
+    private int compraMinima;    
+    private int diaEntrega;      
 
-
-public class Laboratorio
-{
-    private String nombre;
-    private String domicilio;
-    private String telefono;
-    private int compraMinima;
-    private int diaEntrega;
-    
-    
-    public Laboratorio(String p_nombre, String p_domicilio, String p_telefono, int p_compraMin, int p_diaEnt)
-    {
+    // Constructor para inicializar los atributos del laboratorio
+    public Laboratorio(String p_nombre, String p_domicilio, String p_telefono, int p_compraMin, int p_diaEnt) {
         this.setNombre(p_nombre);
         this.setDomicilio(p_domicilio);
         this.setTelefono(p_telefono);
         this.setCompraMinima(p_compraMin);
         this.setDiaEntrega(p_diaEnt);
     }
-    
-    public Laboratorio(String p_nombre, String p_domicilio, String p_telefono)
-    {
+
+    // Constructor para inicializar solo el nombre, domicilio y teléfono del laboratorio
+    public Laboratorio(String p_nombre, String p_domicilio, String p_telefono) {
         this.setNombre(p_nombre);
         this.setDomicilio(p_domicilio);
         this.setTelefono(p_telefono);
-        this.setCompraMinima(1);
-        this.setDiaEntrega(3);
+        this.setCompraMinima(1);  // Valor por defecto para la compra mínima
+        this.setDiaEntrega(3);   // Valor por defecto para el día de entrega
     }
 
     private void setNombre(String p_nombre){
@@ -51,7 +47,6 @@ public class Laboratorio
         return this.nombre;
     }
 
-
     public String getDomicilio() {
         return this.domicilio;
     }
@@ -68,15 +63,17 @@ public class Laboratorio
         return this.diaEntrega;
     }
 
-    public void nuevaCompraMinima(int p_compraMin)
-    {
+    // Método para modificar la compra mínima requerida por el laboratorio
+    public void nuevaCompraMinima(int p_compraMin) {
         this.setCompraMinima(p_compraMin);
     }
-    
+
+    // Método para modificar el día de entrega establecido por el laboratorio
     public void nuevoDiaEntrega(int p_diaEnt){
         this.setDiaEntrega(p_diaEnt);
     }
-    
+
+    // Método para mostrar la información del laboratorio
     public String mostrar(){
         return "Laboratorio: " + this.getNombre() +"\n" +"Domicilio: " + this.getDomicilio() + " Telefono: " +this.getTelefono();
     }

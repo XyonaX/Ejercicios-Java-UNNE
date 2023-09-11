@@ -1,8 +1,9 @@
 public class Escuela {
-    private String nombre;
-    private String domicilio;
-    private String director;
+    private String nombre;  
+    private String domicilio;  
+    private String director;  
 
+    // Constructor para inicializar una escuela con nombre, domicilio y director
     public Escuela(String p_nombre, String p_domicilio, String p_director){
         this.setNombre(p_nombre);
         this.setDomicilio(p_domicilio);
@@ -33,10 +34,14 @@ public class Escuela {
         return this.director;
     }
 
+    // Método para imprimir un recibo de sueldo para un docente
     public void imprimirRecibo(Docente p_docente){
+        // Título con información de la escuela
         String titulo = String.format("Escuela: %s\tDomicilio: %s\tDirector: %s",this.getNombre(),this.getDomicilio(),this.getDirector());
         System.out.println(titulo);
+        // Línea separadora
         System.out.println("--------------------------------------------------------------------------------------------------------------");
+        // Información del docente y sueldo
         System.out.print("Docente: "+p_docente.getNombre()+"\nSueldo: \t\t$" +p_docente.calcularSueldo()+"\nSueldo Básico: \t\t$" +p_docente.getSueldoBasico()+"\nAsignación familiar: \t\t$" +p_docente.getAsigFamiliar());
     }
 }

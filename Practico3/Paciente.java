@@ -14,52 +14,52 @@ public class Paciente {
     }
 
     public int getHistoriaClinica() {
-        return historiaClinica;
+        return this.historiaClinica;
     }
 
 
-    private void setHistoriaClinica(int historiaClinica) {
-        this.historiaClinica = historiaClinica;
+    private void setHistoriaClinica(int p_historiaClinica) {
+        this.historiaClinica = p_historiaClinica;
     }
 
 
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
 
-    private void setNombre(String nombre) {
-        this.nombre = nombre;
+    private void setNombre(String p_nombre) {
+        this.nombre = p_nombre;
     }
 
 
     public String getDomicilio() {
-        return domicilio;
+        return this.domicilio;
     }
 
 
-    private void setDomicilio(String domicilio) {
-        this.domicilio = domicilio;
+    private void setDomicilio(String p_domicilio) {
+        this.domicilio = p_domicilio;
     }
 
 
     public Localidad getLocalidadNacido() {
-        return localidadNacido;
+        return this.localidadNacido;
     }
 
 
-    private void setLocalidadNacido(Localidad localidadNacido) {
-        this.localidadNacido = localidadNacido;
+    private void setLocalidadNacido(Localidad p_localidadNacido) {
+        this.localidadNacido = p_localidadNacido;
     }
 
 
     public Localidad getLocalidadVive() {
-        return localidadVive;
+        return this.localidadVive;
     }
 
 
-    private void setLocalidadVive(Localidad localidadVive) {
-        this.localidadVive = localidadVive;
+    private void setLocalidadVive(Localidad p_localidadVive) {
+        this.localidadVive = p_localidadVive;
     }
 
 

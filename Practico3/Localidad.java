@@ -1,13 +1,13 @@
-
 public class Localidad {
-    private String nombre;
-    private String provincia;
+    private String nombre;      
+    private String provincia;   
 
+    // Constructor para inicializar los atributos de la localidad
     public Localidad(String p_nombre, String p_provincia) {
         this.setNombre(p_nombre);
         this.setProvincia(p_provincia);
     }
-    
+
     public String getNombre() {
         return nombre;
     }
@@ -24,8 +24,8 @@ public class Localidad {
         this.provincia = provincia;
     }
 
+    // Método para mostrar la información de la localidad
     public String mostrar(){
-        return String.format("Localidad: %s \tProvincia: %s", this.getNombre(),this.getProvincia());
+        return String.format("Localidad: %s \tProvincia: %s", this.getNombre(), this.getProvincia());
     }
-    
 }
