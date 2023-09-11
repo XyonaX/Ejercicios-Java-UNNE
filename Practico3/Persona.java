@@ -34,23 +34,23 @@ public class Persona {
         this.apellido = p_apellido;
     }
 
+    
+    public int getDNI(){
+        return this.nroDni;
+    }
+    
+    public String getNombre(){
+        return this.nombre;
+    }
+    
+    public String getApellido(){
+        return this.apellido;
+    }
+    
     private void setAnioNacimiento(int p_anio){
         this.fechaNacimiento = new GregorianCalendar();
         this.fechaNacimiento.set(Calendar.YEAR, p_anio);
     }
-
-    public int getDNI(){
-        return this.nroDni;
-    }
-
-    public String getNombre(){
-        return this.nombre;
-    }
-
-    public String getApellido(){
-        return this.apellido;
-    }
-
     // Método para obtener el año de nacimiento de la persona (getter)
     public int getAnioNacimiento(){
         return this.fechaNacimiento.get(Calendar.YEAR);
