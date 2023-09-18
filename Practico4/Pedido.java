@@ -8,16 +8,13 @@ public class Pedido {
     public Pedido(Calendar p_fecha, Cliente p_cliente, ArrayList<Productos> p_productos) {
         this.setFecha(p_fecha);
         this.setCliente(p_cliente);
-        this.setProductos(new ArrayList<>());
-        this.setProductos(p_productos);
+        this.setProductos(new ArrayList<>(p_productos));
     }
 
     public Pedido(Calendar p_fecha, Cliente p_cliente, Productos p_productos) {
         this.setFecha(p_fecha);
         this.setCliente(p_cliente);
-        this.setProductos(new ArrayList<>());
         this.setProductos(p_productos);
-
     }
 
     private void setFecha(Calendar p_fecha) {
@@ -60,7 +57,7 @@ public class Pedido {
     public double totalAlContado() {
         double totalAlContado = 0.0;
 
-        for (Productos producto : this.productos) {
+        for (Productos producto : this.getProductos()) {
             totalAlContado += producto.precioContado();
         }
 
@@ -69,8 +66,8 @@ public class Pedido {
 
     public double totalFinanciado() {
         double totalFinanciado = 0.0;
-        for (int i = 0; i < this.productos.size(); i++) {
-            Productos producto = this.productos.get(i);
+        for (int i = 0; i < this.getProductos().size(); i++) {
+            Productos producto = this.getProductos().get(i);
             totalFinanciado += producto.precioLista();
         }
         return totalFinanciado;
