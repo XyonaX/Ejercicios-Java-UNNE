@@ -10,14 +10,15 @@ public class Banco {
         this.setNombre(p_nombre);
         this.setLocalidad(p_localidad);
         this.setNroSucursal(p_nroSucursal);
-        this.setEmpleados(p_empleado);
+        this.setEmpleados(new ArrayList<>());
+        this.agregarEmpleado(p_empleado);
     }
 
     public Banco(String p_nombre, Localidad p_localidad, int p_nroSucursal, ArrayList<Empleado> p_empleados) {
         this.setNombre(p_nombre);
         this.setLocalidad(p_localidad);
         this.setNroSucursal(p_nroSucursal);
-        this.setEmpleados(new ArrayList<>(p_empleados));
+        this.setEmpleados(p_empleados);
     }
 
     public String getNombre() {
@@ -50,11 +51,6 @@ public class Banco {
 
     public void setEmpleados(ArrayList<Empleado> p_empleados) {
         this.empleados = p_empleados;
-    }
-
-    private void setEmpleados(Empleado p_empleados) {
-        this.empleados = new ArrayList<>();
-        this.empleados.add(p_empleados);
     }
 
     public boolean agregarEmpleado(Empleado p_empleado) {

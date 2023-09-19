@@ -5,13 +5,14 @@ public class Pedido {
     private Cliente cliente;
     private ArrayList<Productos> productos;
 
-    public Pedido(Calendar p_fecha, Cliente p_cliente, ArrayList<Productos> p_productos) {
+    public Pedido(Calendar p_fecha, Cliente p_cliente, Productos p_productos) {
         this.setFecha(p_fecha);
         this.setCliente(p_cliente);
-        this.setProductos(new ArrayList<>(p_productos));
+        this.setProductos(new ArrayList<>());
+        this.agregarProductos(p_productos);
     }
 
-    public Pedido(Calendar p_fecha, Cliente p_cliente, Productos p_productos) {
+    public Pedido(Calendar p_fecha, Cliente p_cliente, ArrayList<Productos> p_productos) {
         this.setFecha(p_fecha);
         this.setCliente(p_cliente);
         this.setProductos(p_productos);
@@ -27,11 +28,6 @@ public class Pedido {
 
     private void setProductos(ArrayList<Productos> p_productos) {
         this.productos = p_productos;
-    }
-
-    private void setProductos(Productos p_productos) {
-        this.productos = new ArrayList<>();
-        this.productos.add(p_productos);
     }
 
     public Calendar getFecha() {
