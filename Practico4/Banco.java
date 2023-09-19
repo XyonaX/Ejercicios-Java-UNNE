@@ -58,12 +58,17 @@ public class Banco {
     }
 
     public boolean quitarEmpleado(Empleado p_empleado) {
-        return this.getEmpleados().remove(p_empleado);
+        if (this.getEmpleados().size() == 1) {
+            System.out.println("\nNo se puede eliminar toda la lista!\n");
+            return false;
+        } else {
+            return this.getEmpleados().remove(p_empleado);
+        }
     }
 
     public void listarSueldos() {
         for (Empleado empleado : this.getEmpleados()) {
-            System.out.printf("%d\t%s -------------------------  $%.2f", empleado.getCuil(), empleado.apeYNom(),
+            System.out.printf("%d\t%s -------------------------  $%.2f\n", empleado.getCuil(), empleado.apeYNom(),
                     empleado.sueldoNeto());
         }
     }
@@ -81,7 +86,7 @@ public class Banco {
         System.out.printf("Banco: %s\tSucursal: %d\nLocalidad: %s\tProvincia: %s\n\n", this.getNombre(),
                 this.getNroSucursal(), this.getLocalidad().getNombre(), this.getLocalidad().getProvincia());
         this.listarSueldos();
-        System.out.printf("Total a Pagar-------------------------------------------------------------------$%.2f",
+        System.out.printf("\nTotal a Pagar----------------------------------------$%.2f\n",
                 this.sueldosAPagar());
     }
 }

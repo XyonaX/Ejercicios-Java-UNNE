@@ -47,7 +47,12 @@ public class Pedido {
     }
 
     public boolean quitarProductos(Productos p_productos) {
-        return this.getProductos().remove(p_productos);
+        if (this.getProductos().size() == 1) {
+            System.out.println("\nNo se puede eliminar todos los productos!\n");
+            return false;
+        } else {
+            return this.getProductos().remove(p_productos);
+        }
     }
 
     public double totalAlContado() {
