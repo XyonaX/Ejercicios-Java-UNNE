@@ -1,6 +1,6 @@
 public class Hospital {
-    private String nombreHospital;  
-    private String nombreDirector;  
+    private String nombreHospital;
+    private String nombreDirector;
 
     // Constructor para inicializar el nombre del hospital y el nombre del director
     public Hospital(String p_nombreHospital, String p_nombreDirector) {
@@ -9,7 +9,7 @@ public class Hospital {
     }
 
     public String getNombreHospital() {
-        return nombreHospital;
+        return this.nombreHospital;
     }
 
     private void setNombreHospital(String nombreHospital) {
@@ -17,7 +17,7 @@ public class Hospital {
     }
 
     public String getNombreDirector() {
-        return nombreDirector;
+        return this.nombreDirector;
     }
 
     private void setNombreDirector(String nombreDirector) {
@@ -29,7 +29,7 @@ public class Hospital {
         // Imprime el nombre del hospital y del director
         System.out.println("Hospital: " + this.getNombreHospital() + "\tDirector: " + this.getNombreDirector());
         System.out.println("----------------------------------------------------------------------");
-        
+
         // Llama al método mostrarDatosPantalla del paciente
         p_paciente.mostrarDatosPantalla();
     }

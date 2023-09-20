@@ -1,9 +1,9 @@
 public class Hombre {
-    private String nombre;  
-    private String apellido;  
-    private int edad;  
-    private String estadoCivil;  
-    private Mujer esposa;  // Esposa del hombre
+    private String nombre;
+    private String apellido;
+    private int edad;
+    private String estadoCivil;
+    private Mujer esposa; // Esposa del hombre
 
     // Constructor para inicializar un hombre soltero
     public Hombre(String p_nombre, String p_apellido, int p_edad) {
@@ -65,31 +65,32 @@ public class Hombre {
     }
 
     // Método para casar al hombre con una mujer dada
-    public void casarseCon(Mujer p_mujer){
+    public void casarseCon(Mujer p_mujer) {
         this.setEstadoCivil("Casado");
         this.setEsposa(p_mujer);
     }
 
     // Método para divorciar al hombre
-    public void divorcio(){
+    public void divorcio() {
         this.setEstadoCivil("Divorciado");
         this.setEsposa(null);
     }
 
     // Método para obtener los datos del hombre (nombre, apellido y edad)
-    public String datos(){
-        String datos = String.format("%s %s de %d años",this.getNombre(),this.getApellido(),this.getEdad());
-        return datos; 
+    public String datos() {
+        String datos = String.format("%s %s de %d años", this.getNombre(), this.getApellido(), this.getEdad());
+        return datos;
     }
 
     // Método para mostrar el estado civil del hombre
-    public void mostrarEstadoCivil(){
-        String datos = String.format("%s %s de %d años - %s",this.getNombre(),this.getApellido(),this.getEdad(), this.getEstadoCivil());
-        System.out.println(datos); 
+    public void mostrarEstadoCivil() {
+        String datos = String.format("%s %s de %d años - %s", this.getNombre(), this.getApellido(), this.getEdad(),
+                this.getEstadoCivil());
+        System.out.println(datos);
     }
 
     // Método para mostrar que el hombre está casado con su esposa
-    public void casadaCon(){
+    public void casadoCon() {
         System.out.println(this.esposa.datos() + " está casada con " + this.datos());
     }
 }

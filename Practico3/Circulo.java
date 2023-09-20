@@ -1,6 +1,6 @@
 public class Circulo {
-    private double radio;  
-    private Punto centro;  // Centro del círculo (un objeto de tipo Punto)
+    private double radio;
+    private Punto centro; // Centro del círculo (un objeto de tipo Punto)
 
     // Constructor para inicializar el círculo con radio y centro dados
     public Circulo(double p_radio, Punto p_centro) {
@@ -8,66 +8,69 @@ public class Circulo {
         this.setCentro(p_centro);
     }
 
-    // Constructor predeterminado que inicializa el círculo con radio 0 y centro en el origen
-    public Circulo(){
+    // Constructor predeterminado que inicializa el círculo con radio 0 y centro en
+    // el origen
+    public Circulo() {
         this.setRadio(0);
         this.setCentro(new Punto(0, 0));
     }
 
     // Método para asignar el centro del círculo (setter)
-    private void setCentro(Punto p_centro){
+    private void setCentro(Punto p_centro) {
         this.centro = p_centro;
     }
 
-    private void setRadio(double p_radio){
+    private void setRadio(double p_radio) {
         this.radio = p_radio;
     }
 
-    public Punto getCentro(){
+    public Punto getCentro() {
         return this.centro;
     }
 
-    public double getRadio(){
+    public double getRadio() {
         return this.radio;
     }
-    
+
     // Método para desplazar el centro del círculo
-    public void desplazar(double p_dx, double p_dy){
-        this.centro.desplazar(p_dx, p_dy);
+    public void desplazar(double p_dx, double p_dy) {
+        this.getCentro().desplazar(p_dx, p_dy);
     }
 
     // Método para calcular el área del círculo
-    public double superficie(){
-        return Math.PI * Math.pow(getRadio(), 2);
+    public double superficie() {
+        return Math.PI * Math.pow(this.getRadio(), 2);
     }
 
     // Método para calcular el perímetro del círculo
-    public double perimetro(){
-        return 2 * Math.PI * getRadio();
+    public double perimetro() {
+        return 2 * Math.PI * this.getRadio();
     }
 
     // Método para imprimir características del círculo
-    public void caracteristicas(){
+    public void caracteristicas() {
         System.out.println("****** Circulo ******");
-        System.out.println("Centro: "+this.getCentro().coordenadas()+"\t-Radio: "+this.getRadio());
-        System.out.println("Superficie: "+this.superficie() + "\t-Perímetro: " +this.perimetro()+"\n") ;
+        System.out.println("Centro: " + this.getCentro().coordenadas() + "\t-Radio: " + this.getRadio());
+        System.out.println("Superficie: " + this.superficie() + "\t-Perímetro: " + this.perimetro() + "\n");
     }
 
-    // Método para calcular la distancia entre el centro de este círculo y otro círculo
-    public double distanciaA(Circulo otroCirculo){
-        double diferenciaX = otroCirculo.getCentro().getX() - this.centro.getX();
-        double diferenciaY = otroCirculo.getCentro().getY() - this.centro.getY();
-        return Math.sqrt(Math.pow(diferenciaX, 2) + Math.pow(diferenciaY,2));
+    // Método para calcular la distancia entre el centro de este círculo y otro
+    // círculo
+    public double distanciaA(Circulo otroCirculo) {
+        double diferenciaX = otroCirculo.getCentro().getX() - this.getCentro().getX();
+        double diferenciaY = otroCirculo.getCentro().getY() - this.getCentro().getY();
+        return Math.sqrt(Math.pow(diferenciaX, 2) + Math.pow(diferenciaY, 2));
     }
 
-    // Método para determinar el círculo de mayor superficie entre este y otro círculo
-    public Circulo elMayor(Circulo otroCirculo){
-        if(this.superficie() > otroCirculo.superficie()){
+    // Método para determinar el círculo de mayor superficie entre este y otro
+    // círculo
+    public Circulo elMayor(Circulo otroCirculo) {
+        if (this.superficie() > otroCirculo.superficie()) {
             return this;
-        }else if(otroCirculo.superficie() > this.superficie()){
+        } else if (otroCirculo.superficie() > this.superficie()) {
             return otroCirculo;
-        }else{
-            return null;  // Ambos tienen la misma superficie
+        } else {
+            return null; // Ambos tienen la misma superficie
         }
     }
 }
