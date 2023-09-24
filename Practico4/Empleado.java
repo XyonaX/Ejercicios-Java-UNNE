@@ -1,5 +1,12 @@
 import java.util.*;
 
+/**
+ * Crea y permite manipular un objeto de tipo Empleado.
+ * 
+ * @author X, Ingrid Noelí.
+ * @author Vargas Portillo, Jonatan Ezequiel.
+ */
+
 public class Empleado {
 
     private long cuil;
@@ -8,8 +15,15 @@ public class Empleado {
     private double sueldoBasico;
     private Calendar fechaIngreso; // Fecha de ingreso del empleado
 
-    // Constructor para inicializar un empleado con CUIL, apellido, nombre, sueldo
-    // básico e año de ingreso
+    /**
+     * Constructor que inicializa atributos por parametro.
+     * 
+     * @param p_cuil     long;
+     * @param p_apellido String;
+     * @param p_nombre   String;
+     * @param p_importe  double;
+     * @param p_anio     int;
+     */
     public Empleado(long p_cuil, String p_apellido, String p_nombre, double p_importe, int p_anio) {
         this.setCuil(p_cuil);
         this.setApellido(p_apellido);
@@ -18,8 +32,15 @@ public class Empleado {
         this.setAnioIngreso(p_anio);
     }
 
-    // Constructor para inicializar un empleado con CUIL, apellido, nombre, sueldo
-    // básico y fecha de ingreso
+    /**
+     * Constructor sobrecargado que inicializa atributos por parametro.
+     * 
+     * @param p_cuil     long;
+     * @param p_apellido String;
+     * @param p_nombre   String;
+     * @param p_importe  double;
+     * @param p_fecha    Calendar;
+     */
     public Empleado(long p_cuil, String p_apellido, String p_nombre, double p_importe, Calendar p_fecha) {
         this.setCuil(p_cuil);
         this.setApellido(p_apellido);
@@ -28,6 +49,7 @@ public class Empleado {
         this.setFechaIngreso(p_fecha);
     }
 
+    // Accessors
     public long getCuil() {
         return this.cuil;
     }
@@ -81,19 +103,33 @@ public class Empleado {
         this.fechaIngreso = p_fechaIngreso;
     }
 
-    // Metodo para calcular la antigüedad del empleado en años
+    // Fin de Accessors
+
+    /**
+     * Calcula la antiguedad del empleado, en funcion de su fecha de ingreso.
+     * 
+     * @return la antiguedad del empleado.
+     */
     public int antiguedad() {
         Calendar fechaHoy = new GregorianCalendar();
         int anioHoy = fechaHoy.get(Calendar.YEAR);
         return anioHoy - this.getFechaIngreso().get(Calendar.YEAR);
     }
 
-    // Metodo para calcular el descuento del sueldo del empleado
+    /**
+     * Calcula el descuento.
+     * 
+     * @return el descuento a realizar.
+     */
     private double descuento() {
         return this.getSueldoBasico() * 0.02 + 1500;
     }
 
-    // Metodo para calcular el adicional del sueldo del empleado según su antigüedad
+    /**
+     * Calcula el adicional.
+     * 
+     * @return el adicional.
+     */
     private double adicional() {
         if (this.antiguedad() < 2) {
             return this.getSueldoBasico() * 0.02;
@@ -104,35 +140,52 @@ public class Empleado {
         }
     }
 
-    // Metodo para calcular el sueldo neto del empleado
+    /**
+     * Calcula el sueldo neto.
+     * 
+     * @return el sueldo neto.
+     */
     public double sueldoNeto() {
         return (this.getSueldoBasico() + this.adicional()) - this.descuento();
     }
 
-    // Metodo para obtener el nombre y apellido del empleado
+    /**
+     * Concatena el nombre y apellido.
+     * 
+     * @return Retorna el nombre y apellido concatenados.
+     */
     public String nomYApe() {
         return this.getNombre() + " " + this.getApellido();
     }
 
-    // Metodo para obtener el apellido y nombre del empleado
     public String apeYNom() {
         return this.getApellido() + " " + getNombre();
     }
 
-    // Metodo para mostrar información sobre el empleado
+    /**
+     * Muestra por pantalla los datos del empleado.
+     */
     public void mostrar() {
         System.out.println("Nombre y Apellido: " + this.nomYApe());
         System.out.println("CUIL: " + this.getCuil() + " Antiguedad: " + this.antiguedad() + " anios de servicio");
         System.out.println("Sueldo Neto: $" + this.sueldoNeto());
     }
 
-    // Metodo para representar la información del empleado en una línea de texto
+    /**
+     * Concatena el cuil, apellido y nombre y sueldo.
+     * 
+     * @return el cuil, apellido y nombre, y sueldo neto del empleado.
+     */
     public String mostrarLinea() {
         String resultado = String.format("%11d %-30s $%.2f", this.getCuil(), this.nomYApe(), this.sueldoNeto());
         return resultado;
     }
 
-    // Metodo para verificar si es el aniversario de ingreso del empleado
+    /**
+     * Verifica si es el aniversario del empleado.
+     * 
+     * @return true o false segun la verificacion.
+     */
     public boolean esAniversario() {
         Calendar fechaHoy = new GregorianCalendar();
         int diaHoy = fechaHoy.get(Calendar.DAY_OF_YEAR);

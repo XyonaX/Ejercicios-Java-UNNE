@@ -1,15 +1,26 @@
 public class Productos {
-    private int codigo;           
-    private String rubro;         
-    private String descripcion;   
-    private double costo;         
-    private int stock;            
-    private double porcPtoRepo;   
-    private int existMinima;      
+    private int codigo;
+    private String rubro;
+    private String descripcion;
+    private double costo;
+    private int stock;
+    private double porcPtoRepo;
+    private int existMinima;
     private Laboratorio laboratorio; // Laboratorio del producto
 
-    // Constructor para inicializar los atributos del producto con punto de reposición
-    public Productos(int p_codigo, String p_rubro, String p_desc, double p_costo, double p_porcPtoRepo, int p_existMinima, Laboratorio p_lab) {
+    /**
+     * inicializa el stock en 0 e inicializa los demás atributos por parametro
+     * 
+     * @param p_codigo      int
+     * @param p_rubro       String
+     * @param p_desc        String
+     * @param p_costo       double
+     * @param p_porcPtoRepo double
+     * @param p_existMinima int
+     * @param p_lab         Laboratorio
+     */
+    public Productos(int p_codigo, String p_rubro, String p_desc, double p_costo, double p_porcPtoRepo,
+            int p_existMinima, Laboratorio p_lab) {
         this.setCodigo(p_codigo);
         this.setRubro(p_rubro);
         this.setDescripcion(p_desc);
@@ -20,7 +31,16 @@ public class Productos {
         this.setLaboratorio(p_lab);
     }
 
-    // Constructor para inicializar los atributos del producto sin punto de reposición
+    /**
+     * Inicializa al stock, porcPtoRepo y ExistMinima en 0, y inicializa por
+     * parametro a los demas atributos.
+     * 
+     * @param p_codigo int
+     * @param p_rubro  String
+     * @param p_desc   String
+     * @param p_costo  double
+     * @param p_lab    Laboratorio
+     */
     public Productos(int p_codigo, String p_rubro, String p_desc, double p_costo, Laboratorio p_lab) {
         this.setCodigo(p_codigo);
         this.setRubro(p_rubro);
@@ -32,7 +52,7 @@ public class Productos {
         this.setLaboratorio(p_lab);
     }
 
-    // Metodos setter para asignar valores a los atributos
+    // Accessors
     private void setCodigo(int p_codigo) {
         this.codigo = p_codigo;
     }
@@ -65,7 +85,6 @@ public class Productos {
         this.laboratorio = p_lab;
     }
 
-    // Metodos getter para obtener valores de los atributos
     public int getCodigo() {
         return this.codigo;
     }
@@ -98,45 +117,78 @@ public class Productos {
         return this.laboratorio;
     }
 
-    // Método para mostrar los detalles del producto en la consola
+    // Fin Accessors
+    /**
+     * Muestra por pantalla los datos de laboratorio, rubro y detalles del producto.
+     * 
+     */
     public void mostrar() {
         String lab = getLaboratorio().mostrar();
-        System.out.print(lab + " \n Rubro: " + getRubro() + " \n Descripcion: " + getDescripcion() 
-        + " \n Precio Costo: $" + getCosto() + " \n Stock: " + getStock() + " \t Stock valorizado: $" + stockValorizado() +"\n");
+        System.out.print(lab + " \n Rubro: " + getRubro() + " \n Descripcion: " + getDescripcion()
+                + " \n Precio Costo: $" + getCosto() + " \n Stock: " + getStock() + " \t Stock valorizado: $"
+                + stockValorizado() + "\n");
     }
 
-    // Método para calcular el valor del stock del producto
+    /**
+     * Multiplica el stock valorizado por el 12% de rentabilidad.
+     * 
+     * @return Devuelve el resultado de la multiplicación más el adicional.
+     */
     public double stockValorizado() {
         double adicional = (this.getCosto() * this.getStock()) * 0.12;
         return (this.getCosto() * this.getStock()) + adicional;
     }
 
-    // Método para ajustar el stock del producto
+    /**
+     * Modifica el stock agregando o quitando.
+     * 
+     * @param p_cantidad int;
+     */
     public void ajuste(int p_cantidad) {
         this.setStock(getStock() + p_cantidad);
     }
 
-    // Método para calcular el precio de lista del producto
+    /**
+     * Calcula el precio de lista.
+     * 
+     * @return el precio de lista.
+     */
     public double precioLista() {
         return getCosto() * 0.12 + getCosto();
     }
 
-    // Método para calcular el precio de contado del producto
+    /**
+     * Calcula el descuento del precio contado de un producto.
+     * 
+     * @return el precio al contado.
+     */
     public double precioContado() {
         return precioLista() - precioLista() * 0.05;
     }
 
-    // Método para obtener una representación en forma de cadena de caracteres del producto
+    /**
+     * Concatena la descripción del producto, su precio de lista y su precio al
+     * contado.
+     * 
+     */
     public String mostrarLinea() {
-        return String.format("%s %.2f %.2f" ,getDescripcion() , precioLista(), precioContado());
+        return String.format("%s %.2f %.2f", getDescripcion(), precioLista(), precioContado());
     }
 
-    // Método para ajustar el punto de reposición del producto
+    /**
+     * Ajusta el valor de ptoRepo.
+     * 
+     * @param p_porce double;
+     */
     public void ajustarPtoRepo(double p_porce) {
         this.setPorcPtoRepo(p_porce);
     }
 
-    // Método para ajustar la existencia mínima requerida del producto
+    /**
+     * Ajusta la existMinima.
+     * 
+     * @param p_cantidad int;
+     */
     public void ajustarExistMinima(int p_cantidad) {
         this.setExistMinima(p_cantidad);
     }

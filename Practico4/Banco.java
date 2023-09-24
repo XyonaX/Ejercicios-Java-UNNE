@@ -1,5 +1,12 @@
 import java.util.ArrayList;
 
+/**
+ * Permite liquidar los sueldos de los empleados de un Banco.
+ * 
+ * @author Vargas Portillo,Jonatan Ezequiel.
+ * @author X, Ingrid Noelí.
+ */
+
 public class Banco {
     private String nombre;
     private int nroSucursal;
@@ -7,6 +14,14 @@ public class Banco {
     private ArrayList<Empleado> empleados; // usamos genericos
     private ArrayList cuentasBancarias; // sin genericos
 
+    /**
+     * Constructor que inicializa los atributos por parametro.
+     * 
+     * @param p_nombre      String;
+     * @param p_localidad   Localidad;
+     * @param p_nroSucursal int;
+     * @param p_empleados   Empleado;
+     */
     public Banco(String p_nombre, Localidad p_localidad, int p_nroSucursal, Empleado p_empleado) {
         this.setNombre(p_nombre);
         this.setLocalidad(p_localidad);
@@ -17,6 +32,15 @@ public class Banco {
 
     }
 
+    /**
+     * Constructor que inicializa los atributos por parametro.
+     * 
+     * @param p_nombre      String;
+     * @param p_localidad   Localidad;
+     * @param p_nroSucursal int;
+     * @param p_empleados   ArrayList<Empleado>;
+     */
+
     public Banco(String p_nombre, Localidad p_localidad, int p_nroSucursal, ArrayList<Empleado> p_empleados) {
         this.setNombre(p_nombre);
         this.setLocalidad(p_localidad);
@@ -24,6 +48,16 @@ public class Banco {
         this.setEmpleados(p_empleados);
         this.setCuenta(new ArrayList<>());
     }
+
+    /**
+     * Constructor que inicializa los atributos por parametro.
+     * 
+     * @param p_nombre      String;
+     * @param p_localidad   Localidad;
+     * @param p_nroSucursal int;
+     * @param p_empleados   ArrayList<Empleado>;
+     * @param p_cuentas     ArrayList sin generico;
+     */
 
     public Banco(String p_nombre, Localidad p_localidad, int p_nroSucursal, ArrayList<Empleado> p_empleados,
             ArrayList p_cuentas) {
@@ -33,6 +67,8 @@ public class Banco {
         this.setEmpleados(p_empleados);
         this.setCuenta(p_cuentas);
     }
+
+    // Accessors
 
     public String getNombre() {
         return this.nombre;
@@ -66,24 +102,32 @@ public class Banco {
         this.empleados = p_empleados;
     }
 
-    /**
-     * @param p_cuenta
-     *                 recibe una lista y lo setea en el atributo cuentasBancarias
-     */
     private void setCuenta(ArrayList p_cuenta) {
         this.cuentasBancarias = p_cuenta;
     }
 
-    /**
-     * @return devuelve una lista de cuentas
-     */
     public ArrayList getCuenta() {
         return this.cuentasBancarias;
     }
 
+    // Fin de Acessors
+
+    /**
+     * Agrega empleado recibido por parametro.
+     * 
+     * @param p_empleados Empleado;
+     * @return true o false segun si el empleado fue agregado a la coleccion.
+     */
     public boolean agregarEmpleado(Empleado p_empleado) {
         return this.getEmpleados().add(p_empleado);
     }
+
+    /**
+     * Quita al empleado recibido por parametro.
+     * 
+     * @param p_empleados Empleado;
+     * @return true o false segun si el empleado fue removido de la coleccion.
+     */
 
     public boolean quitarEmpleado(Empleado p_empleado) {
         if (this.getEmpleados().size() == 1) {
@@ -94,14 +138,29 @@ public class Banco {
         }
     }
 
+    /**
+     * Agrega la cuenta recibida por parametro.
+     * 
+     * @param p_cuenta CuentaBancaria;
+     * @return true o false segun si la cuenta fue agregada a la coleccion.
+     */
     public boolean agregarCuentaBancaria(CuentaBancaria p_cuenta) {
         return this.getCuenta().add(p_cuenta);
     }
 
+    /**
+     * Quita la cuenta recibida por parametro.
+     * 
+     * @param p_cuenta CuentaBancaria;
+     * @return true o false segun si la cuenta fue removida de la coleccion.
+     */
     public boolean quitarCuentaBancaria(CuentaBancaria p_cuenta) {
         return this.getCuenta().remove(p_cuenta);
     }
 
+    /**
+     * Muestra por pantalla las cuentas cuyos saldos esten en 0.
+     */
     private void mostrarSaldoCero() {
         System.out.println("\nTitulares con Cuenta en Saldo Cero\n");
         System.out.println("-------------------------------------------------------\n");
@@ -113,6 +172,9 @@ public class Banco {
         System.out.println("-------------------------------------------------------\n");
     }
 
+    /**
+     * Permite conocer cuantas cuentas tienen un saldo mayor a 0, estan activas.
+     */
     private int cuentasSaldoActivo() {
         int cuentasActivas = 0;
         for (CuentaBancaria cuenta : (ArrayList<CuentaBancaria>) this.getCuenta()) {
@@ -123,6 +185,9 @@ public class Banco {
         return cuentasActivas;
     }
 
+    /**
+     * Muestra los datos del banco y un resumen de las cuentas bancarias.
+     */
     public void mostrarResumen() {
         System.out.printf("Banco: %s\tSucursal: %d\nLocalidad: %s\tProvincia: %s\n\n", this.getNombre(),
                 this.getNroSucursal(), this.getLocalidad().getNombre(), this.getLocalidad().getProvincia());
@@ -147,6 +212,9 @@ public class Banco {
         return cuentasSaldoCero;
     }
 
+    /**
+     * Lista por pantalla el sueldo de todos los empleados.
+     */
     public void listarSueldos() {
         for (Empleado empleado : this.getEmpleados()) {
             System.out.printf("%d\t%s -------------------------  $%.2f\n", empleado.getCuil(), empleado.apeYNom(),
@@ -154,6 +222,11 @@ public class Banco {
         }
     }
 
+    /**
+     * Calcula el total a pagar de los sueldos de los empleados.
+     * 
+     * @return el total a pagar de sueldos.
+     */
     public double sueldosAPagar() {
         double totalAPagar = 0.0;
 
@@ -163,6 +236,10 @@ public class Banco {
         return totalAPagar;
     }
 
+    /**
+     * Muestra por pantalla los datos del banco con sus empleados y el total a pagar
+     * de sueldos.
+     */
     public void mostrar() {
         System.out.printf("Banco: %s\tSucursal: %d\nLocalidad: %s\tProvincia: %s\n\n", this.getNombre(),
                 this.getNroSucursal(), this.getLocalidad().getNombre(), this.getLocalidad().getProvincia());
