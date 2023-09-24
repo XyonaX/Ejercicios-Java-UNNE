@@ -58,7 +58,7 @@ public class Comercio {
     }
 
     public void nomina() {
-        System.out.println("**** Nomina de empleados de Avanti SRL **** \n");
+        System.out.printf("**** Nomina de empleados de %s **** \n", this.getNombre());
         for (Map.Entry<Long, Empleado> empleado : this.getEmpleados().entrySet()) {
             System.out.printf("%d\t%s-------$%.2f\n", empleado.getKey(), empleado.getValue().nomYApe(),
                     empleado.getValue().sueldoNeto());
