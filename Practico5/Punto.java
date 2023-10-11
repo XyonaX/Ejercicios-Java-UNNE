@@ -1,6 +1,6 @@
 public class Punto {
-    private double x;  // Coordenada x
-    private double y;  // Coordenada y
+    private double x; // Coordenada x
+    private double y; // Coordenada y
 
     // Constructor por defecto que inicializa el punto en el origen (0,0)
     public Punto() {
@@ -32,8 +32,8 @@ public class Punto {
 
     // Método para desplazar el punto en el plano
     public void desplazar(double p_dx, double p_dy) {
-        this.x = this.getX() + p_dx;
-        this.y = this.getY() + p_dy;
+        this.setX(this.getX() + p_dx);
+        this.setY(this.getY() + p_dy);
     }
 
     // Método para obtener las coordenadas del punto en formato (x, y)

@@ -1,12 +1,11 @@
-public class Rectangulo {
-    private Punto origen; // El punto de origen del rectángulo
+public class Rectangulo extends FiguraGeometrica {
     private double ancho; // El ancho del rectángulo
     private double alto; // La altura del rectángulo
 
     // Constructor que permite especificar el punto de origen, ancho y alto del
     // rectángulo
     public Rectangulo(Punto p_origen, double p_ancho, double p_alto) {
-        this.setOrigen(p_origen);
+        super(p_origen);
         this.setAncho(p_ancho);
         this.setAlto(p_alto);
     }
@@ -14,7 +13,7 @@ public class Rectangulo {
     // Constructor que permite especificar solo el ancho y el alto, el punto de
     // origen se establece en el origen (0,0)
     public Rectangulo(double p_ancho, double p_alto) {
-        this.setOrigen(new Punto(0, 0));
+        super(new Punto(0, 0));
         this.setAncho(p_ancho);
         this.setAlto(p_alto);
     }
@@ -27,22 +26,12 @@ public class Rectangulo {
         this.alto = p_alto;
     }
 
-    // Método setter para asignar el punto de origen
-    private void setOrigen(Punto p_origen) {
-        this.origen = p_origen;
-    }
-
     public double getAncho() {
         return this.ancho;
     }
 
     public double getAlto() {
         return this.alto;
-    }
-
-    // Método getter para obtener el punto de origen
-    public Punto getOrigen() {
-        return this.origen;
     }
 
     public String nombreFigura() {
@@ -52,7 +41,7 @@ public class Rectangulo {
 
     // Método para desplazar el punto de origen del rectángulo en el plano
     public void desplazar(double p_dx, double p_dy) {
-        this.origen.desplazar(p_dx, p_dy);
+        super.getOrigen().desplazar(p_dx, p_dy);
     }
 
     // Método para calcular la superficie del rectángulo
@@ -76,8 +65,9 @@ public class Rectangulo {
     // Método para calcular la distancia entre este rectángulo y otro rectángulo
     // dado
     public double distanciaA(Rectangulo otroRectangulo) {
-        double diferenciaX = otroRectangulo.getOrigen().getX() - this.origen.getX();
-        double diferenciaY = otroRectangulo.getOrigen().getY() - this.origen.getY();
+
+        double diferenciaX = otroRectangulo.getOrigen().getX() - super.getOrigen().getX();
+        double diferenciaY = otroRectangulo.getOrigen().getY() - super.getOrigen().getY();
         return Math.sqrt(Math.pow(diferenciaX, 2) + Math.pow(diferenciaY, 2));
     }
 
