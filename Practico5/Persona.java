@@ -89,7 +89,7 @@ public class Persona {
     public void mostrar() {
 
         System.out.println("Nombre y Apellido: " + this.nomYApe());
-        System.out.println("DNI: " + this.getDNI() + " Edad: " + this.edad());
+        System.out.println("DNI: " + this.getDNI() + " Edad: " + this.edad() + " años");
     }
 
     // Método para verificar si es el cumpleaños de la persona
