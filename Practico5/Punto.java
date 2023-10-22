@@ -1,19 +1,35 @@
+/**
+ * Clase que representa un punto en un plano cartesiano con coordenadas (x, y).
+ * 
+ * Permite la manipulación y cálculos básicos de puntos en el plano.
+ * 
+ * @author X, Ingrid Noelí.
+ * @author Vargas Portillo, Jonatan Ezequiel.
+ */
 public class Punto {
     private double x; // Coordenada x
     private double y; // Coordenada y
 
-    // Constructor por defecto que inicializa el punto en el origen (0,0)
+    /**
+     * Constructor por defecto que inicializa el punto en el origen (0,0).
+     */
     public Punto() {
         this.setX(0);
         this.setY(0);
     }
 
-    // Constructor que permite inicializar el punto con coordenadas especificas
+    /**
+     * Constructor que permite inicializar el punto con coordenadas específicas.
+     * 
+     * @param p_x Coordenada x del punto.
+     * @param p_y Coordenada y del punto.
+     */
     public Punto(double p_x, double p_y) {
         this.setX(p_x);
         this.setY(p_y);
     }
 
+    // Accessors
     private void setX(double p_x) {
         this.x = p_x;
     }
@@ -30,23 +46,40 @@ public class Punto {
         return this.y;
     }
 
-    // Método para desplazar el punto en el plano
+    // Fin Accessors
+    /**
+     * Desplaza el punto en el plano agregando valores a las coordenadas actuales.
+     * 
+     * @param p_dx Valor a agregar a la coordenada x.
+     * @param p_dy Valor a agregar a la coordenada y.
+     */
     public void desplazar(double p_dx, double p_dy) {
         this.setX(this.getX() + p_dx);
         this.setY(this.getY() + p_dy);
     }
 
-    // Método para obtener las coordenadas del punto en formato (x, y)
+    /**
+     * Obtiene las coordenadas del punto en formato (x, y).
+     * 
+     * @return Coordenadas del punto en formato (x, y).
+     */
     public String coordenadas() {
         return String.format("(%.1f , %.1f)", this.getX(), this.getY());
     }
 
-    // Método para mostrar las coordenadas del punto en la consola
+    /**
+     * Muestra las coordenadas del punto en la consola.
+     */
     public void mostrar() {
         System.out.println("Punto: X: " + this.getX() + ", Y: " + this.getY());
     }
 
-    // Método para calcular la distancia entre este punto y otro punto dado
+    /**
+     * Calcula la distancia entre este punto y otro punto dado.
+     * 
+     * @param p_ptoDistante Punto al que se calcula la distancia.
+     * @return Distancia entre los puntos.
+     */
     public double distanciaA(Punto p_ptoDistante) {
         double diferenciaX = p_ptoDistante.getX() - this.getX();
         double diferenciaY = p_ptoDistante.getY() - this.getY();

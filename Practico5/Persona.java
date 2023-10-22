@@ -1,13 +1,27 @@
 import java.util.*;
 
+/**
+ * Clase que representa a una persona con atributos como DNI, nombre, apellido y
+ * fecha de nacimiento.
+ * 
+ * @author X, Ingrid Noelí.
+ * @author Vargas Portillo, Jonatan Ezequiel.
+ */
 public class Persona {
-    private int nroDni;
-    private String nombre;
-    private String apellido;
+    private int nroDni; // Número de Documento de Identidad de la persona
+    private String nombre; // Nombre de la persona
+    private String apellido; // Apellido de la persona
     private Calendar fechaNacimiento; // Fecha de nacimiento de la persona
 
-    // Constructor para inicializar los atributos de la persona con año de
-    // nacimiento
+    /**
+     * Constructor para inicializar los atributos de la persona con año de
+     * nacimiento.
+     * 
+     * @param p_dni      Número de Documento de Identidad.
+     * @param p_nombre   Nombre de la persona.
+     * @param p_apellido Apellido de la persona.
+     * @param p_anio     Año de nacimiento.
+     */
     public Persona(int p_dni, String p_nombre, String p_apellido, int p_anio) {
         this.setDNI(p_dni);
         this.setNombre(p_nombre);
@@ -15,8 +29,15 @@ public class Persona {
         this.setAnioNacimiento(p_anio);
     }
 
-    // Constructor para inicializar los atributos de la persona con fecha de
-    // nacimiento
+    /**
+     * Constructor para inicializar los atributos de la persona con fecha de
+     * nacimiento.
+     * 
+     * @param p_dni      Número de Documento de Identidad.
+     * @param p_nombre   Nombre de la persona.
+     * @param p_apellido Apellido de la persona.
+     * @param p_fecha    Fecha de nacimiento.
+     */
     public Persona(int p_dni, String p_nombre, String p_apellido, Calendar p_fecha) {
         this.setDNI(p_dni);
         this.setNombre(p_nombre);
@@ -24,6 +45,7 @@ public class Persona {
         this.setFechaNacimiento(p_fecha);
     }
 
+    // Accessors
     private void setDNI(int p_dni) {
         this.nroDni = p_dni;
     }
@@ -68,31 +90,50 @@ public class Persona {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    // Método para calcular la edad de la persona
+    // Fin Accessors
+    /**
+     * Calcula la edad de la persona.
+     * 
+     * @return Edad de la persona.
+     */
     public int edad() {
         Calendar fechaHoy = new GregorianCalendar();
         int anioHoy = fechaHoy.get(Calendar.YEAR);
         return anioHoy - this.getAnioNacimiento();
     }
 
-    // Método para obtener el nombre y apellido de la persona
+    /**
+     * Obtiene el nombre y apellido de la persona.
+     * 
+     * @return Nombre y apellido de la persona.
+     */
     public String nomYApe() {
         return this.getNombre() + " " + this.getApellido();
     }
 
-    // Método para obtener el apellido y nombre de la persona
+    /**
+     * Obtiene el apellido y nombre de la persona.
+     * 
+     * @return Apellido y nombre de la persona.
+     */
     public String apeYNom() {
         return this.getApellido() + " " + this.getNombre();
     }
 
-    // Método para mostrar los datos de la persona en pantalla
+    /**
+     * Muestra los datos de la persona en pantalla.
+     */
     public void mostrar() {
 
         System.out.println("Nombre y Apellido: " + this.nomYApe());
         System.out.println("DNI: " + this.getDNI() + " Edad: " + this.edad() + " años");
     }
 
-    // Método para verificar si es el cumpleaños de la persona
+    /**
+     * Verifica si es el cumpleaños de la persona.
+     * 
+     * @return `true` si es el cumpleaños de la persona, de lo contrario `false`.
+     */
     public boolean esCumpleanios() {
         Calendar fechaHoy = Calendar.getInstance();
         int diaHoy = fechaHoy.get(Calendar.DAY_OF_MONTH);
