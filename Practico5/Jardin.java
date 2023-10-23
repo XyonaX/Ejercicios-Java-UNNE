@@ -118,7 +118,7 @@ public class Jardin {
      * cantidad de latas de pintura necesarias.
      */
     public void detalleFiguras() {
-        System.out.println("Presupuesto: " + this.getNombre());
+        System.out.println("\n\nPresupuesto: " + this.getNombre());
         for (FiguraGeometrica figura : (ArrayList<FiguraGeometrica>) figuras) {
             figura.mostrarSuperficie();
         }
